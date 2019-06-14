@@ -1,9 +1,15 @@
 import React, { Component } from "react";
+import GymImages from './gymImages'
 
 class PriceRange extends Component {
+  
   state = {
-    price: 100
+    price: 100,
+    gyms: ""
   };
+
+
+
 
   sliderValue = e => {
     this.setState(
@@ -15,17 +21,32 @@ class PriceRange extends Component {
 
 
   handleBudgetSubmit = (e, price) => {
-    fetch(`http://localhost:4000/gyms`)
+      e.preventDefault()
+
+    fetch(`http://localhost:4000/images`)
     .then(response => response.json())
-    .then(data => console.log(data.data))
+    .then(data => {
+        console.log("hit here")
+        let gymimages = data.data 
 
+        this.setState({
+          gyms: gymimages
+        })
+        
+      })
 
+    }
+    
+    
+    
+    
+    render() {
 
-  }
-
-  render() {
     return (
-      <div class="main-container-price-range-home">
+      
+        <React.Fragment>
+          {this.state.gyms ? <GymImages gyms={this.state.gyms}/> : null}
+        <div class="main-container-price-range-home">
         <div class="container-monthly-price-range-title-home">
           <label for="volume" id="monthly-price-range-title-home">
             Monthly Price Range
@@ -52,8 +73,11 @@ class PriceRange extends Component {
             <span id="budget-price-home-page"> ${this.state.price}</span>
           </div>
           <button class="monthly-price-range-submitbtn" onClick={(e, state) => this.handleBudgetSubmit(e, this.state.price)}>Select Budget</button>
+        
         </div>
+    
       </div>
+        </React.Fragment>
     );
   }
 }
