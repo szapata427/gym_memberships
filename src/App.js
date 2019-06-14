@@ -7,14 +7,17 @@ import SearchGym from '../src/components/searchGym'
 
 
 function App() {
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
       <SearchGym />
       <Home />
     </div>
   );
 }
+
+
 
 export default App;

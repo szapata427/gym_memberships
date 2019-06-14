@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap');
+/* font-family: 'Lato', sans-serif; */
+
+
+
+
 .App {
   text-align: center;
 }
@@ -33,4 +42,131 @@
 }
 
 /* price range slider  */
+input[type=range] {
+  height: 25px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 33%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 19x;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #2497E3;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #2497E3;
+  height: 19px;
+  width: 18px;
+  border-radius: 25px;
+  background: #A1D0FF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #2497E3;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 19x;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #2497E3;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #2497E3;
+  height: 19px;
+  width: 18px;
+  border-radius: 25px;
+  background: #A1D0FF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 19x;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2497E3;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #2497E3;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #2497E3;
+  height: 19px;
+  width: 18px;
+  border-radius: 25px;
+  background: #A1D0FF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #2497E3;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #2497E3;
+}
+
+.range-prices {
+  color: lightskyblue;
+  padding-left: .5em;
+  padding-right: .5em;
+  font-size: 1.4em;
+  font-weight: 700;
+  /* font-family: 'Crimson Text', serif; */
+  font-family: 'Lato', sans-serif;
+
+
+}
+.main-container-price-range-home {
+  padding-top: 2em;
+}
+
+#budget-price-home-page {
+  color: rgb(8, 8, 8);
+  font-size: 2.3em;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.container-monthly-price-range-title-home {
+  padding-bottom: 1em;
+}
+#monthly-price-range-title-home {
+    color: red;
+    font-size: 3em;
+    font-family: 'Roboto', sans-serif;
+  }
+
+.monthly-price-range-submitbtn {
+  background-color: lightcyan;
+  margin-top: 2em;
+}
+
 
