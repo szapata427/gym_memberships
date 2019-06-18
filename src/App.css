@@ -41,6 +41,10 @@
   }
 }
 
+
+.sliderContainer {
+  padding-bottom: 6em;
+}
 /* price range slider  */
 input[type=range] {
   height: 25px;
@@ -167,6 +171,25 @@ input[type=range]:focus::-ms-fill-upper {
 .monthly-price-range-submitbtn {
   background-color: lightcyan;
   margin-top: 2em;
+}
+
+.home-page-image-container {
+  display: inline-block;
+  padding-right: 2em;
+  min-height: 5%;
+  overflow: hidden;
+  width: 20%;
+  height: 10em;
+  max-height: 10em;
+ 
+}
+
+.home-page-gym-logoimage {
+  width: 80%;
+  max-width: 80%;
+  height: 10vh;
+  max-height: 10vh;
+
 }
 
 

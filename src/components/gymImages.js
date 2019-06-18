@@ -7,12 +7,12 @@ class GymImages extends Component {
 
 
 render() {
-    console.log(this.props.gyms)
+    let allgyms = this.props.gyms.map(gym => <div class="home-page-image-container"><img class="home-page-gym-logoimage" src={gym.mainImageUrl}/></div> )
     return (
-        <div>
-
-            <img src={this.props} />
-        </div>
+        <React.Fragment>
+            {allgyms}
+        </React.Fragment>
+        
     )
 }
 }

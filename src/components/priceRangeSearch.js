@@ -45,7 +45,7 @@ class PriceRange extends Component {
     return (
       
         <React.Fragment>
-          {this.state.gyms ? <GymImages gyms={this.state.gyms}/> : null}
+          
         <div class="main-container-price-range-home">
         <div class="container-monthly-price-range-title-home">
           <label for="volume" id="monthly-price-range-title-home">
@@ -75,7 +75,7 @@ class PriceRange extends Component {
           <button class="monthly-price-range-submitbtn" onClick={(e, state) => this.handleBudgetSubmit(e, this.state.price)}>Select Budget</button>
         
         </div>
-    
+        {this.state.gyms ? <GymImages gyms={this.state.gyms}/> : null}
       </div>
         </React.Fragment>
     );
