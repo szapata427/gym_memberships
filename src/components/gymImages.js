@@ -6,11 +6,52 @@ import React, {Component} from 'react'
 class GymImages extends Component {
 
 
+
+    
+gymImagesProps = () => {
+
+  let allgyminfo = this.props.gyminfo
+  let allgymimages = this.props.gymImages
+  console.log(allgyminfo)
+  console.log(allgymimages)
+
+
+
+let mgymsarray = []
+   this.props.gyminfo.filter(gym => {
+                allgymimages.map(gymimage => {
+              if (gymimage["gym_id"] == gym["id"]) {
+                let matchingobject =  {url: gymimage.mainImageUrl, name: gym.name}
+                mgymsarray.push(matchingobject)
+              }
+          })
+      
+          
+          
+      })
+
+      return mgymsarray.map(gyminfo => {
+          return <div class="home-page-image-container">
+             <img class="home-page-gym-logoimage" src={gyminfo.url}/>
+                   <div>
+                       <ul>
+                           {gyminfo.name}
+                       </ul>
+                   </div>
+               </div> 
+      })
+
+  
+}
+
+
+
+
 render() {
-    let allgyms = this.props.gyms.map(gym => <div class="home-page-image-container"><img class="home-page-gym-logoimage" src={gym.mainImageUrl}/></div> )
     return (
         <React.Fragment>
-            {allgyms}
+            <div class="selected-price-popup">You have Selected a budget of ${this.props.price}</div>
+            {this.gymImagesProps()}
         </React.Fragment>
         
     )

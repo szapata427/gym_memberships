@@ -43,7 +43,7 @@
 
 
 .sliderContainer {
-  padding-bottom: 6em;
+  padding-bottom: 3em;
 }
 /* price range slider  */
 input[type=range] {
@@ -171,6 +171,14 @@ input[type=range]:focus::-ms-fill-upper {
 .monthly-price-range-submitbtn {
   background-color: lightcyan;
   margin-top: 2em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  color: rgb(58, 51, 51);
+  font-weight: 700;
+  border: 1px solid silver;
+  border-radius: 7px;
+  font-size: 15px;
+  
 }
 
 .home-page-image-container {
@@ -192,4 +200,9 @@ input[type=range]:focus::-ms-fill-upper {
 
 }
 
+.selected-price-popup {
+  color: rgb(255, 187, 0);
+  font-size: 25px;
+  margin-bottom: 2em;
+}
 

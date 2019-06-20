@@ -5,7 +5,8 @@ class PriceRange extends Component {
   
   state = {
     price: 100,
-    gyms: ""
+    gymImages: "",
+    gymInfo: ""
   };
 
 
@@ -26,14 +27,25 @@ class PriceRange extends Component {
     fetch(`http://localhost:4000/images`)
     .then(response => response.json())
     .then(data => {
-        console.log("hit here")
         let gymimages = data.data 
 
         this.setState({
-          gyms: gymimages
+          gymImages: gymimages
         })
         
       })
+    fetch(`http://localhost:4000/gyms`)
+    .then(response => response.json())
+    .then(data => {
+        let gymdata = data.data 
+
+        this.setState({
+          gymInfo: gymdata
+        })
+        
+      })
+
+
 
     }
     
@@ -72,10 +84,11 @@ class PriceRange extends Component {
           <div>
             <span id="budget-price-home-page"> ${this.state.price}</span>
           </div>
-          <button class="monthly-price-range-submitbtn" onClick={(e, state) => this.handleBudgetSubmit(e, this.state.price)}>Select Budget</button>
+          <button class="monthly-price-range-submitbtn" onClick={(e, state) => this.handleBudgetSubmit(e, this.state.price)}>Select Your Budget!</button>
+
         
         </div>
-        {this.state.gyms ? <GymImages gyms={this.state.gyms}/> : null}
+        {this.state.gymImages ? <GymImages gymImages={this.state.gymImages} price={this.state.price}  gyminfo={this.state.gymInfo}/> : null}
       </div>
         </React.Fragment>
     );
