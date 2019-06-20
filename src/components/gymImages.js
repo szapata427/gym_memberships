@@ -21,7 +21,7 @@ let mgymsarray = []
    this.props.gyminfo.filter(gym => {
                 allgymimages.map(gymimage => {
               if (gymimage["gym_id"] == gym["id"]) {
-                let matchingobject =  {url: gymimage.mainImageUrl, name: gym.name}
+                let matchingobject =  {url: gymimage.mainImageUrl, name: gym.name, value: gym.value, locations: gym.numLocations}
                 mgymsarray.push(matchingobject)
               }
           })
@@ -36,6 +36,12 @@ let mgymsarray = []
                    <div>
                        <ul>
                            {gyminfo.name}
+                       </ul>
+                       <ul>
+                           {gyminfo.value}
+                       </ul>
+                       <ul>
+                           {gyminfo.locations}
                        </ul>
                    </div>
                </div> 
