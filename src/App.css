@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Rubik&display=swap');
+
 /* font-family: 'Lato', sans-serif; */
 
 
@@ -203,21 +206,31 @@ input[type=range]:focus::-ms-fill-upper {
 
 .selected-price-popup {
   color: rgb(255, 187, 0);
-  font-size: 25px;
+  font-size: 28px;
   margin-bottom: 2em;
+  font-weight: 700;
 }
 
 .individual-gym-info-container-home-page {
 
-  background-color: rgb(51, 197, 223);
+  background-color: rgb(181, 228, 247);
   height: 20vh;
   min-height: 15vh;
   max-height: 30vh;
   width: 100%;
   text-align: left;
   margin-top: 2em;
-  border: 1px solid black;
+  border: 3px solid black;
   border-radius: 6px;
+}
+
+#individual-gym-info-name-home-page {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  color: rgb(252, 53, 53);
+
 }
 
 .individual-gym-info-home-page {
@@ -225,6 +238,10 @@ input[type=range]:focus::-ms-fill-upper {
   color: black;
   font-family: 'Roboto', sans-serif;
 
+}
 
+.label-gyminfo-home-page {
+  margin-right: .5em;
+  font-weight: 600;
 }
 

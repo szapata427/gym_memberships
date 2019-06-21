@@ -18,7 +18,9 @@ let mgymsarray = []
        this.props.gyminfo.filter(gym => {
                     allgymimages.map(gymimage => {
                   if (gymimage["gym_id"] == gym["id"]) {
-                    let matchingobject =  {url: gymimage.mainImageUrl, name: gym.name, value: gym.value, locations: gym.numLocations}
+                      let firstletteruppercasevalue = gym.value.charAt(0).toUpperCase()
+                      let finalvalue = firstletteruppercasevalue + gym.value.slice(1)
+                    let matchingobject =  {url: gymimage.mainImageUrl, name: gym.name, value: finalvalue, locations: gym.numLocations}
                     mgymsarray.push(matchingobject)
                   }
               }) 
@@ -29,13 +31,15 @@ let mgymsarray = []
               return <div class="home-page-image-container">
                  <img class="home-page-gym-logoimage" src={gyminfo.url}/>
                        <div class="individual-gym-info-container-home-page"> 
-                           <ul class="individual-gym-info-home-page">
+                           <ul class="individual-gym-info-home-page" id="individual-gym-info-name-home-page">
                                {gyminfo.name}
                            </ul>
                            <ul class="individual-gym-info-home-page">
+                           <label class="label-gyminfo-home-page">Value:</label>
                                {gyminfo.value}
                            </ul>
                            <ul class="individual-gym-info-home-page">
+                           <label class="label-gyminfo-home-page"># of Locations:</label>
                                {gyminfo.locations}
                            </ul>
                        </div>
