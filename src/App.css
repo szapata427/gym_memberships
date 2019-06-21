@@ -234,15 +234,15 @@ input[type=range]:focus::-ms-fill-upper {
 
 .individual-gym-info-container-home-page {
 
-  background-color: rgb(181, 228, 247);
+  background-color: rgb(217, 241, 250);
   height: 25vh;
   min-height: 20vh;
   max-height: 30vh;
   width: 100%;
   text-align: left;
   margin-top: 2em;
-  border: 3px solid black;
-  border-radius: 6px;
+  border: 1px solid silver;
+  border-radius: 10px;
   
 }
 
@@ -251,13 +251,13 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 30px;
   font-family: 'Rubik', sans-serif;
   font-weight: 600;
-  color: rgb(252, 53, 53);
+  color: rgb(59, 6, 6);
 
 }
 
 .individual-gym-info-home-page {
   font-size: 20px;
-  color: black;
+  color: rgb(21, 111, 247);
   font-family: 'Roboto', sans-serif;
 
 }
