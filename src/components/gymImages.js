@@ -56,7 +56,10 @@ class GymImages extends Component {
         <div class="selected-price-popup">
           You have Selected a budget of ${this.props.price}
         </div>
+        <div class="all-gyminfo-master-container">
         {this.gymImagesProps()}
+
+        </div>
       </React.Fragment>
     );
   }
