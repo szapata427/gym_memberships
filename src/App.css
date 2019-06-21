@@ -183,12 +183,13 @@ input[type=range]:focus::-ms-fill-upper {
 
 .home-page-image-container {
   display: inline-block;
+  position: relative;
   padding-right: 2em;
   min-height: 5%;
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 20%;
-  height: 10em;
-  max-height: 10em;
+  height: 15em;
+  max-height: 30em;
  
 }
 
@@ -196,7 +197,7 @@ input[type=range]:focus::-ms-fill-upper {
   width: 80%;
   max-width: 80%;
   height: 10vh;
-  max-height: 10vh;
+  max-height: 15h;
 
 }
 
@@ -204,5 +205,26 @@ input[type=range]:focus::-ms-fill-upper {
   color: rgb(255, 187, 0);
   font-size: 25px;
   margin-bottom: 2em;
+}
+
+.individual-gym-info-container-home-page {
+
+  background-color: rgb(51, 197, 223);
+  height: 20vh;
+  min-height: 15vh;
+  max-height: 30vh;
+  width: 100%;
+  text-align: left;
+  margin-top: 2em;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.individual-gym-info-home-page {
+  font-size: 20px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+
+
 }
 
