@@ -207,7 +207,7 @@ input[type=range]:focus::-ms-fill-upper {
 .home-page-gym-logoimage {
   width: 80%;
   max-width: 80%;
-  height: 10vh;
+  height: 15vh;
   max-height: 15h;
 
 }
@@ -222,8 +222,8 @@ input[type=range]:focus::-ms-fill-upper {
 .individual-gym-info-container-home-page {
 
   background-color: rgb(181, 228, 247);
-  height: 20vh;
-  min-height: 15vh;
+  height: 25vh;
+  min-height: 20vh;
   max-height: 30vh;
   width: 100%;
   text-align: left;
