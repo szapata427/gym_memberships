@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import PriceRange from './priceRangeSearch'
+import GymMembershipInfo from './gymMembershipInfo'
 
 class GymImages extends Component {
   gymImagesProps = () => {
@@ -58,8 +59,8 @@ class GymImages extends Component {
         </div>
         <div class="all-gyminfo-master-container">
         {this.gymImagesProps()}
-
         </div>
+        <GymMembershipInfo />
       </React.Fragment>
     );
   }
