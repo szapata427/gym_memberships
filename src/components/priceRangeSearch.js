@@ -18,46 +18,54 @@ class PriceRange extends Component {
 
   handleBudgetSubmit = (e, price) => {
     e.preventDefault();
+    console.log(this.state.price)
     let pricematchgyms = []
 
     fetch(`http://localhost:4000/memberships`)
     .then(res => res.json())
     .then(data =>  {
       let allmembs = data.data
-      allmembs.filter(mem => {
-        if (mem.monthlyPrice <= this.state.price) {
+
+        allmembs.filter(mem => {
+        if (Math.abs((mem.monthlyPrice - this.state.price)) < 5 && Math.abs((mem.monthlyPrice - this.state.price)) > 0 || Math.abs((this.state.price - mem.monthlyPrice)) <= 5 &&  Math.abs((this.state.price - mem.monthlyPrice)) > 0 ) {
+          console.log(mem)
           pricematchgyms.push(mem.gym_id)
         }
       })
+      this.setState({
+        membershipInfo: pricematchgyms
+      })
     })
-
-    fetch(`http://localhost:4000/images`)
-      .then(response => response.json())
-      .then(data => {
-        let gymimages = data.data;
-        let selectedImages = gymimages.filter(gym => {
-          if (pricematchgyms.includes(gym.gym_id))
-          return gym
-        })
-        console.log(selectedImages)
-        this.setState({
-          gymImages: selectedImages
-        });
-      });
-
 
     fetch(`http://localhost:4000/gyms`)
       .then(response => response.json())
       .then(data => {
+        console.log("hit here")
         let gymdata = data.data;
         let selectedGyms = gymdata.filter(gym => {
-          if (pricematchgyms.includes(gym.id))
+          if (this.state.membershipInfo.includes(gym.id))
           return gym
         })
         this.setState({
           gymInfo: selectedGyms
         });
       });
+
+      fetch(`http://localhost:4000/images`)
+      .then(response => response.json())
+      .then(data => {
+        let gymimages = data.data;
+
+        let selectedImages = gymimages.filter(gym => {
+          if (this.state.membershipInfo.includes(gym.gym_id))
+          return gym
+        })
+
+        this.setState({
+          gymImages: selectedImages
+        });
+      });
+
 
   };
 
