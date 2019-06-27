@@ -4,9 +4,9 @@ import GymImages from "./gymImages";
 class PriceRange extends Component {
   state = {
     price: 100,
-    gymImages: "",
-    gymInfo: "",
-    membershipInfo: ""
+    gymImages: null,
+    gymInfo: null,
+    membershipInfo: null
   };
 
   sliderValue = e => {
@@ -42,13 +42,16 @@ class PriceRange extends Component {
       .then(data => {
         console.log("hit here")
         let gymdata = data.data;
-        let selectedGyms = gymdata.filter(gym => {
-          if (this.state.membershipInfo.includes(gym.id))
-          return gym
-        })
-        this.setState({
-          gymInfo: selectedGyms
-        });
+        if (this.state.membershipInfo) {
+          let selectedGyms = gymdata.filter(gym => {
+            if (this.state.membershipInfo.includes(gym.id))
+            return gym
+          })
+          this.setState({
+            gymInfo: selectedGyms
+          });
+
+        }
       });
 
       fetch(`http://localhost:4000/images`)
@@ -56,14 +59,17 @@ class PriceRange extends Component {
       .then(data => {
         let gymimages = data.data;
 
-        let selectedImages = gymimages.filter(gym => {
-          if (this.state.membershipInfo.includes(gym.gym_id))
-          return gym
-        })
+        if (this.state.membershipInfo) {
+          let selectedImages = gymimages.filter(gym => {
+            if (this.state.membershipInfo.includes(gym.gym_id))
+            return gym
+          })
+  
+          this.setState({
+            gymImages: selectedImages
+          });
 
-        this.setState({
-          gymImages: selectedImages
-        });
+        }
       });
 
 
