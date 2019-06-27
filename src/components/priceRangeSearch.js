@@ -5,7 +5,8 @@ class PriceRange extends Component {
   state = {
     price: 100,
     gymImages: "",
-    gymInfo: ""
+    gymInfo: "",
+    membershipInfo: ""
   };
 
   sliderValue = e => {
@@ -14,27 +15,50 @@ class PriceRange extends Component {
     });
   };
 
+
   handleBudgetSubmit = (e, price) => {
     e.preventDefault();
+    let pricematchgyms = []
+
+    fetch(`http://localhost:4000/memberships`)
+    .then(res => res.json())
+    .then(data =>  {
+      let allmembs = data.data
+      allmembs.filter(mem => {
+        if (mem.monthlyPrice <= this.state.price) {
+          pricematchgyms.push(mem.gym_id)
+        }
+      })
+    })
 
     fetch(`http://localhost:4000/images`)
       .then(response => response.json())
       .then(data => {
         let gymimages = data.data;
-
+        let selectedImages = gymimages.filter(gym => {
+          if (pricematchgyms.includes(gym.gym_id))
+          return gym
+        })
+        console.log(selectedImages)
         this.setState({
-          gymImages: gymimages
+          gymImages: selectedImages
         });
       });
+
+
     fetch(`http://localhost:4000/gyms`)
       .then(response => response.json())
       .then(data => {
         let gymdata = data.data;
-
+        let selectedGyms = gymdata.filter(gym => {
+          if (pricematchgyms.includes(gym.id))
+          return gym
+        })
         this.setState({
-          gymInfo: gymdata
+          gymInfo: selectedGyms
         });
       });
+
   };
 
   render() {
